@@ -15,12 +15,12 @@ public class IzzytheIguana{
         String userInput = input.nextLine();
         for (int i = 0; i < userInput.length(); i++){
             String result = "";
-            if (userInput.valueOf(i).equals(" ")){
+            if (userInput.charAt(i) == " "){
                 snacks.add(result);
-                continue;
+                result = "";
             }
             else{
-                result += userInput.valueOf(i);
+                result += userInput.charAt(i);
             }
         }
 
