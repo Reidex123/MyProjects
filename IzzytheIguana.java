@@ -15,12 +15,12 @@ public class IzzytheIguana{
         String userInput = input.nextLine();
         for (int i = 0; i < userInput.length(); i++){
             String result = "";
-            if (userInput[i].equals(" ")){
+            if (userInput.valueOf(i).equals(" ")){
                 snacks.add(result);
                 continue;
             }
             else{
-                result += userInput[i];
+                result += userInput.valueOf(i);
             }
         }
 
@@ -36,7 +36,7 @@ public class IzzytheIguana{
                 points += mango;
             }
             else{
-                point += cheeseBurger;
+                points += cheeseBurger;
             }
         }
 
