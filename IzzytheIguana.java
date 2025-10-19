@@ -15,7 +15,7 @@ public class IzzytheIguana{
         String userInput = input.nextLine();
         String result = "";
         for (int i = 0; i < userInput.length(); i++){
-            if (userInput.charAt(i) == " "){
+            if (userInput.charAt(i) == ' '){
                 snacks.add(result);
                 result = "";
             }
