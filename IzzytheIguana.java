@@ -23,6 +23,7 @@ public class IzzytheIguana{
                 result += userInput.charAt(i);
             }
         }
+        snacks.add(result);
 
         int points = 0;
         for (String j: snacks){
