@@ -13,8 +13,8 @@ public class IzzytheIguana{
         Scanner input = new Scanner(System.in);
 
         String userInput = input.nextLine();
+        String result = "";
         for (int i = 0; i < userInput.length(); i++){
-            String result = "";
             if (userInput.charAt(i) == " "){
                 snacks.add(result);
                 result = "";
