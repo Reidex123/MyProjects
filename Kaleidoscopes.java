@@ -6,11 +6,21 @@ public class Kaleidoscopes{
   public static double productCost = 5.0d;
 
   public static double total(int customer){
+    double total = 0.0d;
+    double quantityCost = customer*productCost;
+
+    double discountAmount = discount*quantityCost;
+    double taxAmount = tax*quantityCost;
+    
     if (customer > 1){
       // calculate the total with discount
+      total = quantityCost - discountAmount + taxAmount;      
     } else{
       // calculate total without discount
+      total = quantityCost + taxAmount;
     }
+
+    return total;
   }
   public static void main(String[] args){
     Scanner input = new Scanner(System.in);
