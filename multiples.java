@@ -4,7 +4,7 @@ public class multiples{
 
   // find the multiples of 3 of the given number
   public static ArrayList<Integer> multiplesOf3(int num){
-    ArrayList<Integer> mult = new ArrayList<Integer>;
+    ArrayList<Integer> mult = new ArrayList<Integer>();
     
     for (int i = 0; i < num; i++){
       if (i%3 == 0){
