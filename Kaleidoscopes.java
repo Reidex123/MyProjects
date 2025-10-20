@@ -11,17 +11,16 @@ public class Kaleidoscopes{
     double quantityCost = order*productCost;
 
     double discountAmount = discount*quantityCost;
-    double taxAmount = tax*quantityCost;
-    
+      
     if (order > 1){
       // calculate the total with discount
-      total = quantityCost - discountAmount + taxAmount;      
+      total = quantityCost - discountAmount;      
     } else{
       // calculate total without discount
-      total = quantityCost + taxAmount;
+      total = quantityCost;
     }
-
-    return total;
+    double taxAmount = tax*total;
+    return total + taxAmount;
   }
 
   // Main program
@@ -32,6 +31,6 @@ public class Kaleidoscopes{
 
     double cost = total(order);
 
-    System.out.println(cost);
+    System.out.printf("%.2f", cost);
   }
 }
