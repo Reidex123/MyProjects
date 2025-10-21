@@ -32,13 +32,13 @@ public class jungleCamping{
 
     for (int i = 0; i < sounds.size(); i++){
       if (sounds.get(i).equals(Lion)){
-        result += Lion + " ";
+        result += "Lion ";
       } else if (sounds.get(i).equals(Tiger)){
-        result += Tiger + " ";
+        result += "Tiger ";
       } else if (sounds.get(i).equals(Snake)){
-        result += Snake + " ";
+        result += "Snake ";
       } else {
-        result += Bird + " ";
+        result += "Bird ";
       }
     }
     return result.trim();
