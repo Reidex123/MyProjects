@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class landHo!{
+public class landHo{
   public static int trip = 10;
 
   // determine waiting time
