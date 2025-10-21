@@ -5,7 +5,7 @@ public class landHo{
 
   // determine waiting time
   public static int total(int numPassengers){
-    return (!(numPassengers/20 == 0) ? (numPassengers/20)*trip: trip); 
+    return (!(numPassengers/20 == 0) ? ((numPassengers+1)/20)*trip: trip); 
   }
   
   public static void main(String[] args){
