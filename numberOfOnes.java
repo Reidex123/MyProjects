@@ -15,5 +15,7 @@ public class numberOfOnes{
         }
 
         System.out.println(countOnes);
+
+        input.close();
     }
 }

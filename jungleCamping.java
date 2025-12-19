@@ -11,7 +11,7 @@ public class jungleCamping{
   // create an array of animal sounds
   public static ArrayList<String> sound(String noises){
     ArrayList<String> result = new ArrayList<String>();
-    
+
     String word = "";
     for (int i = 0; i < noises.length(); i++){
       if (noises.charAt(i) != ' '){
@@ -53,5 +53,7 @@ public class jungleCamping{
 
     String output = animals(animalSounds);
     System.out.println(output);
+
+    input.close();
   }
 }

@@ -13,5 +13,7 @@ public class neverLand{
       System.out.printf("My twin is %d years old and they are %d year older than me", twinAge, yearsElapsed);
     else
       System.out.printf("My twin is %d years old and they are %d years older then me", twinAge, yearsElapsed);
+
+    input.close();
   }
 }
