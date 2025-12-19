@@ -1,32 +1,34 @@
 import java.util.*;
 
-public class stack<T> implements iterable<T> {
+public class stack<T> implements Iterable<T> {
     private T[] list;
     private int DEFAULT_SIZE = 10;
     private int size = 0;
 
+    @SuppressWarnings("unchecked")
     public stack(int size) {
-        list = new T[size];
+        list = (T[]) new Object[size];
+        DEFAULT_SIZE = size;
     }
 
+    @SuppressWarnings("unchecked")
     public stack() {
-        list = new T[DEFAULT_SIZE];
+        list = (T[]) new Object[DEFAULT_SIZE];
     }
 
-    public class listIterator<T> implements iterator<T> {
+    private class listIterator implements Iterator<T> {
         private int count = 0;
 
         @Override
         public boolean hasNext() {
-            if (0 == size) {
-                return false;
-            }
-
             return count < size;
         }
 
         @Override
-        public <T> T next() {
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
             return list[count++];
         }
     }
@@ -37,56 +39,42 @@ public class stack<T> implements iterable<T> {
     }
 
     public void push(T item) {
-        if (isFull()) {
+        if (size == list.length) {
             resize();
-            list[size - 1] = item;
-            size++;
-        } else {
-            list[size - 1] = item;
-            size++;
         }
+        list[size++] = item;
     }
 
     public T pop() {
         if (isEmpty()) {
-            System.exit(0);
+            throw new EmptyStackException();
         }
-        T value = list[size - 1];
-        for (int i = 0; i < size - 1; i++) {
-            list[i] = list[i];
-            size--;
-        }
+        T value = list[--size];
+        list[size] = null; // Avoid memory leak
         return value;
     }
 
     public T peek() {
-        if (isFull()) {
-            System.exit(0);
-        }
         if (isEmpty()) {
-            System.exit(0);
+            throw new EmptyStackException();
         }
-
         return list[size - 1];
     }
 
-    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
-    @Override
     public boolean isFull() {
-        return size == DEFAULT_SIZE;
+        return size == list.length;
     }
 
+    @SuppressWarnings("unchecked")
     private void resize() {
-        T[] data = new T[2 * DEFAULT_SIZE];
+        T[] data = (T[]) new Object[list.length * 2];
         for (int i = 0; i < size; i++) {
             data[i] = list[i];
         }
-
         list = data;
-        data = null;
     }
 }
