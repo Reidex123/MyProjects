@@ -6,15 +6,20 @@ public class safetyDepositBoxes{
         String target = input.nextLine();
 
         int time = 0;
-        for (String item: box){
 
-            if(item.equalsIgnoreCase(target)){
+        for (String item : box) {
+
+            if (item.equalsIgnoreCase(target)) {
+                time += 5;
+                break;
+            } else {
                 time += 5;
             }
-            else{
-                continue;
-            }
-            
+
         }
+
+        System.out.println(time);
+
+        input.close();
     }
 }
