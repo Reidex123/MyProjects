@@ -8,11 +8,13 @@ public class safetyDepositBoxes{
         int time = 0;
         for (String item: box){
 
-            if(item.equalsIgnoreCase(target))
+            if(item.equalsIgnoreCase(target)){
                 time += 5;
-            else
+            }
+            else{
                 continue;
-                
+            }
+            
         }
     }
 }
